@@ -1,3 +1,7 @@
+"""
+3)Given an array with many numbers, display as output the number with the max number of digits
+"""
+
 mylist = list(map(int, input("Please enter the List(with spaces) Sharvari: ").split()))
 print(mylist)
 
