@@ -7,10 +7,9 @@ https://www.geeksforgeeks.org/array-rotation/
 def array_rotate(mylist, d, n):
     for i in range(d):
         mylist.append(mylist[i])
-    for i in range(d):
-        mylist.pop(0)
 
-    return mylist
+
+    return mylist[d:]
 
 
 
