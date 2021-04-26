@@ -5,8 +5,10 @@ https://www.geeksforgeeks.org/array-rotation/
 
 
 def array_rotate(mylist, d, n):
+    temp = [None]*d   #declaring size with None is v important, code wouldnt work otherwise
     for i in range(d):
-        mylist.append(mylist[i])
+        temp[i] = mylist[i]
+    mylist = mylist+ temp
 
 
     return mylist[d:]
