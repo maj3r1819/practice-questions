@@ -10,3 +10,39 @@ Output: []
 Input: head = [1,2], n = 1
 Output: [1]
 """
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        if head.next is None:
+            return None
+
+        temp = head
+        size = 0
+        while temp:
+            temp = temp.next
+            size += 1
+
+        temp = head
+
+        if n == 1:
+            while (temp.next.next != None):
+                temp = temp.next
+            temp.next = None
+            return head
+
+        elif n == size:
+            return head.next
+        else:
+            num = size - n
+
+            for i in range(size - n - 1):
+                temp = temp.next
+
+            temp.next = temp.next.next
+            return head
+
